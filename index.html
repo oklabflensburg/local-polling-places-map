@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Wahllokale für die Kommunalwahl - Flensburg</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link crossorigin="" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" rel="stylesheet">
+    <link href="https://unpkg.com/leaflet-control-geocoder@2.4.0/dist/Control.Geocoder.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet-src.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder@2.4.0/dist/Control.Geocoder.js"></script>
+</head>
+<body>
+<div class="sm:flex overflow-hidden" id="wrapper">
+    <div class="w-full sm:w-8/12 md:w-7/12 lg:w-9/12 overflow-hidden" id="map"></div>
+    <div class="w-full sm:w-4/12 md:w-5/12 lg:w-3/12 sm:overflow-scroll bg-neutral-100"
+         id="filter">
+            <div class="p-3">
+                <h1 class="text-red-600 text-2xl md:text-3xl font-bold">
+                    Wahllokale zur Kommunalwahl
+                </h1>
+                <h2 class="text-gray-700 text-md" style="color: #04100e">
+                    Schleswig-Holstein - Version 2.1
+                </h2>
+            </div>
+            <div class="font-sans text-md" id="details">
+        </div>
+        <div class="p-3">
+            <h3 class="font-sans text-xl md:text-2xl mb-1 md:mb-2">
+                Technische Umsetzung
+            </h3>
+            <p class="font-mono mb-4 md:mb-8">
+                Erst haben wir versucht, die Geodaten der Wahllokale der
+                einzelnen Wahlbezirke der Stadt Flensburg in maschinenlesbarer
+                Form zu bekommen, jedoch bis heute nicht erhalten. So haben wir
+                uns entschieden, die Wahllkohal Geodaten und Adressen händisch
+                anzuschreiben und nach der Spezifikation <a class="text-blue-600 hover:text-blue-500 focus:text-blue:500"
+                href="https://geojson.org/" target="_blank">RFC 7946</a> in
+              eine GeoJSON Datei über ein kleines selbst geschriebenes Python Tool einzupflegen und mittels der Open Source
+              JavaScript Bibliothek <a class="text-blue-600 hover:text-blue-500 focus:text-blue:500" href="https://leafletjs.com/"
+              target="_blank">LeafletJS</a> auf Basis der <a class="text-blue-600 hover:text-blue-500 focus:text-blue:500"
+              href="https://www.openstreetmap.de/"
+              target="_blank">OpenSteetMap</a> auf einer interaktiven Karte dazustellen.
+            </p>
+            <h3 class="font-sans text-xl md:text-2xl mb-1 md:mb-2">Quellcode</h3>
+            <p class="font-mono">
+                <a class="text-blue-600 hover:text-blue-500 focus:text-blue:500"
+                  href="https://github.com/oklabflensburg/local-polling-places-map" target="_blank">GitHub</a>
+            </p>
+        </div>
+    </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
